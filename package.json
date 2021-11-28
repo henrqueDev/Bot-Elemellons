@@ -1,0 +1,24 @@
+{
+  "name": "bot-discord",
+  "version": "1.0.0",
+  "description": "Bot para discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "iniciar": "nodemon ./index.js localhost 8000"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Luís Henrique",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "discord.js": "^12.5.3",
+    "ffmpeg-static": "^4.4.0",
+    "ytdl-core": "^4.9.0"
+  },
+  "devDependencies": {
+    "electron": "^13.6.1"
+  }
+}
