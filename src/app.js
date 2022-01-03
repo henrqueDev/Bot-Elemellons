@@ -16,7 +16,7 @@ const getRandomIntInclusive = (min, max) => {
 }
 
 const url = 'mongodb+srv://dbUser:lhs157@cluster0.mhve7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-bot.login("ODYxMjYzNzE0NDI5ODI5MTMy.YOHQVw.c1QcfBVX6k5S8Z-jJTp8TYpUFTc")
+bot.login("")
 mongodb.connect(url, async (error,banco) => {
 
   if(error){
