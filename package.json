@@ -4,8 +4,7 @@
   "description": "Bot para discord",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "iniciar": "nodemon ./index.js localhost 8000"
+    "start": "node index.js"
   },
   "keywords": [
     "bot"
@@ -14,11 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
+    "discord": "^0.8.2",
     "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
     "ytdl-core": "^4.9.0"
-  },
-  "devDependencies": {
-    "electron": "^13.6.1"
   }
 }
