@@ -22,9 +22,9 @@ const modelo = require('./model/personagem');
 //const mongoose = require('mongoose');
 const mongodb = require('mongodb').MongoClient;
 var Atributos= modelo.Atributos;
-var Personagem = modelo.Personagem;
-var atr = new Atributos(38,47,37,97,90,62,65,20);
-var personagem = new Personagem(1,"Sion",atr,20,8,14, 7,"https://img.ifunny.co/images/48f343f9a0af7eab5c718607f2404978aecdaa2e1c63c279fafcccbd2099511e_1.jpg");
+//var Personagem = modelo.Personagem;
+//var atr = new Atributos(38,47,37,97,90,62,65,20);
+//var personagem = new Personagem(1,"Sion",atr,20,8,14, 7,"https://img.ifunny.co/images/48f343f9a0af7eab5c718607f2404978aecdaa2e1c63c279fafcccbd2099511e_1.jpg");
 //console.log(JSON.stringify(personagem.atributos) + "  DEU CERTO");
 
 const getRandomIntInclusive = (min, max) => {
@@ -65,26 +65,7 @@ bot.on("message", async (message) => {
   if(message.content.slice(0,5).toLowerCase() == "!info"){
     //mostrarPersonagem(message);
     consultaNome(message,dbo);
-    console.log(message.content.slice(6));
-    /*
-    const consulta = await dbo.collection('Personagens').findOne({nome : message.content.slice(6) });
-    const atributos_personagem = consulta.atributos;
-    const msgPersonalizada = new Discord.MessageEmbed();
-    msgPersonalizada.setTitle(`${consulta.nome}`);
-    msgPersonalizada.setDescription('Atributos');
-    for(k in atributos_personagem){
-      console.log(atributos_personagem[k].normal);
-      
-      msgPersonalizada.addField(atributos_personagem[k].nome,`
-      Normal -> ${atributos_personagem[k].normal}
-      Bom -> ${atributos_personagem[k].bom}
-      Extremo -> ${atributos_personagem[k].extremo}
-      `)
-    }
-    
-    msgPersonalizada.setThumbnail(consulta.urlImg);
-    console.log(consulta);
-    message.channel.send(msgPersonalizada);*/
+   
     }
   
 })
