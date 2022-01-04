@@ -15,6 +15,7 @@
 
 
                                                         *****/
+const {consultaNome} = require('./dba/dba.js');                                              
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const modelo = require('./model/personagem');
@@ -59,9 +60,13 @@ mongodb.connect(url, async (error,banco) => {
 
 
 bot.on("message", async (message) => {
+
+
   if(message.content.slice(0,5).toLowerCase() == "!info"){
+    //mostrarPersonagem(message);
+    consultaNome(message,dbo);
     console.log(message.content.slice(6));
-    
+    /*
     const consulta = await dbo.collection('Personagens').findOne({nome : message.content.slice(6) });
     const atributos_personagem = consulta.atributos;
     const msgPersonalizada = new Discord.MessageEmbed();
@@ -79,7 +84,7 @@ bot.on("message", async (message) => {
     
     msgPersonalizada.setThumbnail(consulta.urlImg);
     console.log(consulta);
-    message.channel.send(msgPersonalizada);
+    message.channel.send(msgPersonalizada);*/
     }
   
 })
