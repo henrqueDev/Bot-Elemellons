@@ -1,3 +1,4 @@
 const bot = require('./src/app.js');
 
-bot.start();
+require('dotenv').config()
+bot.start(process.env.BOT_LOGIN);

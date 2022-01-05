@@ -1,34 +1,37 @@
 /****** 
 
 1- !Info -> Concluído 
-2- !recuperarMana -> Não iniciado
+2- !recuperarMana -> Concluído
 3- !gastarMana -> Não iniciado
 4- !recuperarVida -> Não iniciado
 5- !perderVida -> Não iniciado
+6- !uparAtributo -> Não iniciado
 6- !uparNivel -> Não iniciado
 7- !aumentarSensibilidade -> Não iniciado
 
 
 
-
-
-
-
                                                         *****/
-const {consultaNome} = require('./dba/dba.js');                                              
+
+
+
+
+
+const {consultaNome, recuperarMana} = require('./dba/dba.js');                                              
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const modelo = require('./model/personagem');
+
 //const mongoose = require('mongoose');
 const mongodb = require('mongodb').MongoClient;
 
 
-start = () => {
+start = (BOT_LOGIN) => {
   
 var Atributos= modelo.Atributos;
 var Personagem = modelo.Personagem;
-var atr = new Atributos(38,47,37,97,90,62,65,20);
-var personagem = new Personagem(1,"Sion",atr,20,8,14, 7,"https://img.ifunny.co/images/48f343f9a0af7eab5c718607f2404978aecdaa2e1c63c279fafcccbd2099511e_1.jpg");
+//var atr = new Atributos(38,47,37,97,90,62,65,20);
+//var personagem = new Personagem(355349319047577610,"Sion",atr,20,8,14, 7,"https://img.ifunny.co/images/48f343f9a0af7eab5c718607f2404978aecdaa2e1c63c279fafcccbd2099511e_1.jpg");
 //console.log(JSON.stringify(personagem.atributos) + "  DEU CERTO");
 
 const getRandomIntInclusive = (min, max) => {
@@ -38,7 +41,7 @@ const getRandomIntInclusive = (min, max) => {
 }
 
 const url = 'mongodb+srv://dbUser:lhs157@cluster0.mhve7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-bot.login("")
+bot.login(BOT_LOGIN);
 mongodb.connect(url, async (error,banco) => {
 
   if(error){
@@ -58,39 +61,37 @@ mongodb.connect(url, async (error,banco) => {
  
   //await consulta.forEach(doc => console.log(doc));
   
-  dbo.collection("Personagens").insertOne(personagem, (doc) =>{
+ /* dbo.collection("Personagens").insertOne(personagem, (doc) =>{
     console.log(doc);
-  })
+  })*/
 
 
 bot.on("message", async (message) => {
-
-
-  if(message.content.slice(0,5).toLowerCase() == "!info"){
-    //mostrarPersonagem(message);
-    consultaNome(message,dbo);
-    console.log(message.content.slice(6));
-    /*
-    const consulta = await dbo.collection('Personagens').findOne({nome : message.content.slice(6) });
-    const atributos_personagem = consulta.atributos;
-    const msgPersonalizada = new Discord.MessageEmbed();
-    msgPersonalizada.setTitle(`${consulta.nome}`);
-    msgPersonalizada.setDescription('Atributos');
-    for(k in atributos_personagem){
-      console.log(atributos_personagem[k].normal);
-      
-      msgPersonalizada.addField(atributos_personagem[k].nome,`
-      Normal -> ${atributos_personagem[k].normal}
-      Bom -> ${atributos_personagem[k].bom}
-      Extremo -> ${atributos_personagem[k].extremo}
-      `)
-    }
-    
-    msgPersonalizada.setThumbnail(consulta.urlImg);
-    console.log(consulta);
-    message.channel.send(msgPersonalizada);*/
-    }
   
+try{
+  if(message.content.slice(0,5).toLowerCase() == "!info"){
+    consultaNome(message,dbo);
+    }
+  else if(message.content.slice(0,19) == "!recuperarTotalMana"){
+    recuperarTotalMana(message,dbo);
+  }else  if(message.content.slice(0,16) == "!recuperar50Mana"){
+    recuperar50Mana(message,dbo);
+  }else  if(message.content.slice(0,16) == "!recuperar20Mana"){
+    recuperar20Mana(message,dbo);
+  }else  if(message.content.slice(0,16) == "!recuperar10Mana"){
+    recuperar10Mana(message,dbo);
+  }else  if(message.content.slice(0,15) == "!recuperar5Mana"){
+    recuperar5Mana(message,dbo);
+  }else  if(message.content.slice(0,15) == "!recuperar3Mana"){
+    recuperar3Mana(message,dbo);
+  }else  if(message.content.slice(0,15) == "!recuperar2Mana"){
+    recuperar2Mana(message,dbo);
+  }else  if(message.content.slice(0,15) == "!recuperar1Mana"){
+    recuperar1Mana(message,dbo);
+  }
+}catch(error){
+  console.log("DEU ERRO -> " + error);
+}
 })
   
  
