@@ -17,7 +17,7 @@
 
 
 
-const {consultaNome, recuperarMana} = require('./dba/dba.js');                                              
+const {consultaNome, recuperarTotalMana} = require('./dba/dba.js');                                              
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const modelo = require('./model/personagem');
