@@ -123,7 +123,7 @@ async function recuperar1Mana(message,dbo){
       mana: consulta.mana+qnt
     }
   };
-  const update = await dbo.collection('Personagens').updateOne({nome: message.content.slice(15)},mudança);
+  const update = await dbo.collection('Personagens').updateOne({id_discord: parseInt(message.author.id)},mudança);
 
   return message.channel.send(`O personagem ${consulta.nome} recuperou +${qnt} de mana!`);
 }
@@ -134,13 +134,31 @@ async function gastar1Mana(message,dbo){
   console.log(consulta)
   const mudança = {
     $set:{
-      mana: consulta.mana+qnt
+      mana: consulta.mana-qnt
     }
   };
-  const update = await dbo.collection('Personagens').updateOne({nome: message.content.slice(15)},mudança);
+  const update = await dbo.collection('Personagens').updateOne({id_discord: parseInt(message.author.id)},mudança);
 
   return message.channel.send(`O personagem ${consulta.nome} recuperou +${qnt} de mana!`);
 }
+
+
+async function gastar10Mana(message,dbo){
+  const qnt = 10;
+  const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
+  console.log(consulta)
+  const mudança = {
+    $set:{
+      mana: consulta.mana-qnt
+    }
+  };
+  const update = await dbo.collection('Personagens').updateOne({id_discord: parseInt(message.author.id)},mudança);
+
+  return message.channel.send(`O personagem ${consulta.nome} gastou +${qnt} de mana!`);
+}
+
+
+
 
 
 async function aumentar5Pontos(message,dbo){
@@ -178,4 +196,4 @@ async function aumentar5Pontos(message,dbo){
   return message.channel.send(msgPersonalizada);
 }
 
-module.exports = {consultaNome,recuperarTotalMana,recuperar50Mana,recuperar20Mana,recuperar10Mana,recuperar3Mana,recuperar2Mana,recuperar1Mana};
+module.exports = {consultaNome,recuperarTotalMana,recuperar50Mana,recuperar20Mana,recuperar10Mana,recuperar5Mana,recuperar3Mana,recuperar2Mana,recuperar1Mana,gastar1Mana,gastar10Mana};

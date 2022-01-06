@@ -17,7 +17,7 @@
 
 
 
-const {consultaNome, recuperarTotalMana} = require('./dba/dba.js');                                              
+const {consultaNome, recuperarTotalMana, gastar10Mana} = require('./dba/dba.js');                                              
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const modelo = require('./model/personagem');
@@ -40,8 +40,9 @@ const getRandomIntInclusive = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const url = 'mongodb+srv://dbUser:lhs157@cluster0.mhve7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const url = process.env.MONGO_DB_URL;
 bot.login(BOT_LOGIN);
+
 mongodb.connect(url, async (error,banco) => {
 
   if(error){
@@ -88,7 +89,10 @@ try{
     recuperar2Mana(message,dbo);
   }else  if(message.content.slice(0,15) == "!recuperar1Mana"){
     recuperar1Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar10Mana"){
+    gastar10Mana(message,dbo);
   }
+  
 }catch(error){
   console.log("DEU ERRO -> " + error);
 }
