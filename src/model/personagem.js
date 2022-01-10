@@ -23,18 +23,18 @@ class Personagem {
 
 class Atributos{
   constructor(forca,constituicao,tamanho,destreza,aparencia,inteligencia,poder,educacao){
-    this.forca = new calc_normalbomextremo(forca,"Força");
-    this.constituicao = new calc_normalbomextremo(constituicao,"Constituição");
-    this.tamanho = new calc_normalbomextremo(tamanho,"Tamanho");
-    this.destreza = new calc_normalbomextremo(destreza,"Destreza");
-    this.aparencia = new calc_normalbomextremo(aparencia, "Aparência");
-    this.inteligencia = new calc_normalbomextremo(inteligencia,"Inteligência");
-    this.poder = new calc_normalbomextremo(poder,"Poder");
-    this.educacao = new calc_normalbomextremo(educacao,"Educação");
+    this.forca = new Calc_NormalBomExtremo(forca,"Força");
+    this.constituicao = new Calc_NormalBomExtremo(constituicao,"Constituição");
+    this.tamanho = new Calc_NormalBomExtremo(tamanho,"Tamanho");
+    this.destreza = new Calc_NormalBomExtremo(destreza,"Destreza");
+    this.aparencia = new Calc_NormalBomExtremo(aparencia, "Aparência");
+    this.inteligencia = new Calc_NormalBomExtremo(inteligencia,"Inteligência");
+    this.poder = new Calc_NormalBomExtremo(poder,"Poder");
+    this.educacao = new Calc_NormalBomExtremo(educacao,"Educação");
   }
 
 }
-class calc_normalbomextremo{
+class Calc_NormalBomExtremo{
   constructor(normal, nome){
     this.nome = nome
     this.normal = normal;
@@ -45,3 +45,4 @@ class calc_normalbomextremo{
 
 module.exports.Personagem = Personagem;
 module.exports.Atributos = Atributos;
+module.exports.Calc_NormalBomExtremo= Calc_NormalBomExtremo;

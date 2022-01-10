@@ -2,10 +2,10 @@
 
 1- !Info -> Concluído 
 2- !recuperarMana -> Concluído
-3- !gastarMana -> Não iniciado
+3- !gastarMana -> Concluído
 4- !recuperarVida -> Não iniciado
 5- !perderVida -> Não iniciado
-6- !uparAtributo -> Não iniciado
+6- !uparAtributo -> Em andamento
 6- !uparNivel -> Não iniciado
 7- !aumentarSensibilidade -> Não iniciado
 
@@ -17,7 +17,9 @@
 
 
 
-const {consultaNome, recuperarTotalMana, gastar10Mana} = require('./dba/dba.js');                                              
+const {consultaNome,aumentar5Pontos} = require('./dba/dba'); 
+const {gastar1Mana,gastar2Mana,gastar3Mana,gastar10Mana,gastar15Mana,gastar20Mana,gastar50Mana} = require('./dba/gastarMana');               
+const {recuperarTotalMana,recuperar50Mana,recuperar20Mana,recuperar10Mana,recuperar5Mana,recuperar3Mana,recuperar2Mana,recuperar1Mana} = require('./dba/recuperarMana');                                      
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const modelo = require('./model/personagem');
@@ -91,6 +93,24 @@ try{
     recuperar1Mana(message,dbo);
   }else  if(message.content.slice(0,13) == "!gastar10Mana"){
     gastar10Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar1Mana"){
+    gastar1Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar2Mana"){
+    gastar2Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar3Mana"){
+    gastar3Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar5Mana"){
+    gastar5Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar10Mana"){
+    gastar10Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar15Mana"){
+    gastar15Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar20Mana"){
+    gastar20Mana(message,dbo);
+  }else  if(message.content.slice(0,13) == "!gastar50Mana"){
+    gastar50Mana(message,dbo);
+  }else if(message.content.slice(0,16) == "!aumentar5Pontos"){
+    aumentar5Pontos(message,dbo);
   }
   
 }catch(error){
