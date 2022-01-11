@@ -5,7 +5,7 @@
 3- !gastarMana -> Concluído
 4- !recuperarVida -> Não iniciado
 5- !perderVida -> Não iniciado
-6- !uparAtributo -> Em andamento
+6- !uparAtributo -> Concluído
 6- !uparNivel -> Não iniciado
 7- !aumentarSensibilidade -> Não iniciado
 
@@ -19,6 +19,8 @@
 
 const {consultaNome,aumentar5Pontos} = require('./dba/dba'); 
 const {gastar1Mana,gastar2Mana,gastar3Mana,gastar10Mana,gastar15Mana,gastar20Mana,gastar50Mana} = require('./dba/gastarMana');               
+const {aumentar1Ponto,aumentar2Pontos,aumentar3Pontos,aumentar5Pontos,aumentar10Pontos,aumentar15Pontos} = require('./dba/altAtributos');
+
 const {recuperarTotalMana,recuperar50Mana,recuperar20Mana,recuperar10Mana,recuperar5Mana,recuperar3Mana,recuperar2Mana,recuperar1Mana} = require('./dba/recuperarMana');                                      
 const Discord = require('discord.js');
 const bot = new Discord.Client();

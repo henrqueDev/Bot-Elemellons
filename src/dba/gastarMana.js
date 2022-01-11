@@ -1,3 +1,12 @@
+/*
+gastarMana.js
+
+
+NESTE ARQUIVO SE ENCONTRA AS FUNCTIONS PARA A FUNCIONALIDADE GASTAR MANA
+
+
+*/
+
 
 const Discord = require('discord.js');
 const modelo = require('../model/personagem');
@@ -125,21 +134,7 @@ async function gastar50Mana(message,dbo){
   return message.channel.send(`O personagem ${consulta.nome} gastou +${qnt} de mana!`);
 }
 
-/*
-async function gastar100Mana(message,dbo){
-  const qnt = 100;
-  const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
-  console.log(consulta)
-  const mudança = {
-    $set:{
-      mana: consulta.mana-qnt
-    }
-  };
-  const update = await dbo.collection('Personagens').updateOne({id_discord: parseInt(message.author.id)},mudança);
 
-  return message.channel.send(`O personagem ${consulta.nome} gastou +${qnt} de mana!`);
-}
-*/
 
 
 module.exports = {gastar1Mana,gastar2Mana,gastar3Mana,gastar10Mana,gastar15Mana,gastar20Mana,gastar50Mana}
