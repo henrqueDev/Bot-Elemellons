@@ -109,8 +109,18 @@ try{
     gastar20Mana(message,dbo);
   }else  if(message.content.slice(0,13) == "!gastar50Mana"){
     gastar50Mana(message,dbo);
+  }else if(message.content.slice(0,15) == "!aumentar1Ponto"){
+    aumentar1Ponto(message,dbo);
+  }else if(message.content.slice(0,16) == "!aumentar2Pontos"){
+    aumentar2Pontos(message,dbo);
+  }else if(message.content.slice(0,16) == "!aumentar3Pontos"){
+    aumentar3Pontos(message,dbo);
   }else if(message.content.slice(0,16) == "!aumentar5Pontos"){
-    aumentar5Pontos(message,dbo);
+    aumentar4Pontos(message,dbo);
+  }else if(message.content.slice(0,17) == "!aumentar10Pontos"){
+    aumentar10Pontos(message,dbo);
+  }else if(message.content.slice(0,16) == "!aumentar15Pontos"){
+    aumentar15Pontos(message,dbo);
   }
   
 }catch(error){
