@@ -43,4 +43,4 @@ var Calculo = modelo.Calc_NormalBomExtremo;
   return message.channel.send(msgPersonalizada);
 }
 
-module.exports = {consultaNome,aumentar5Pontos};
+module.exports = {consultaNome};

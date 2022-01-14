@@ -19,7 +19,7 @@
 
 const {consultaNome,aumentar5Pontos} = require('./dba/dba'); 
 const {gastar1Mana,gastar2Mana,gastar3Mana,gastar10Mana,gastar15Mana,gastar20Mana,gastar50Mana} = require('./dba/gastarMana');               
-const {aumentar1Ponto,aumentar2Pontos,aumentar3Pontos,aumentar5Pontos,aumentar10Pontos,aumentar15Pontos} = require('./dba/altAtributos');
+const {aumentar1Ponto,aumentar2Pontos,aumentar3Pontos,aumentar10Pontos,aumentar15Pontos} = require('./dba/altAtributos');
 
 const {recuperarTotalMana,recuperar50Mana,recuperar20Mana,recuperar10Mana,recuperar5Mana,recuperar3Mana,recuperar2Mana,recuperar1Mana} = require('./dba/recuperarMana');                                      
 const Discord = require('discord.js');
