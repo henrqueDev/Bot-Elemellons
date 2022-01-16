@@ -6,6 +6,10 @@ var Atributos= modelo.Atributos;
 
 var aumento = {};
 
+
+
+
+
 function checkAtributo(atributo,consulta,qnt){
 switch(atributo){
   case 'forca':
@@ -84,6 +88,9 @@ switch(atributo){
     break;
 }
 }
+
+
+
 async function aumentar1Ponto(message,dbo){
   let qnt = 1;
   let atributo = message.content.slice(15).trim();
