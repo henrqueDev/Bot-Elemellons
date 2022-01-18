@@ -19,7 +19,7 @@ async function gastar1Mana(message,dbo){
   const qnt = 1;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt
@@ -41,7 +41,7 @@ async function gastar2Mana(message,dbo){
   const qnt = 2;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt
@@ -62,7 +62,7 @@ async function gastar3Mana(message,dbo){
   const qnt = 3;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt
@@ -83,7 +83,7 @@ async function gastar5Mana(message,dbo){
   const qnt = 5;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt
@@ -103,7 +103,7 @@ async function gastar10Mana(message,dbo){
   const qnt = 10;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt
@@ -123,7 +123,7 @@ async function gastar15Mana(message,dbo){
   const qnt = 15;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt
@@ -143,7 +143,7 @@ async function gastar20Mana(message,dbo){
   const qnt = 20;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt
@@ -163,7 +163,7 @@ async function gastar50Mana(message,dbo){
   const qnt = 50;
   const consulta = await dbo.collection('Personagens').findOne({ id_discord: parseInt(message.author.id)});
   console.log(consulta)
-  if(consulta.mana - qnt < 0){
+  if(consulta.mana - qnt >= 0){
   const mudança = {
     $set:{
       mana: consulta.mana-qnt

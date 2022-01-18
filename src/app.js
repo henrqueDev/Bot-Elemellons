@@ -34,8 +34,8 @@ start = (BOT_LOGIN) => {
   
 var Atributos= modelo.Atributos;
 var Personagem = modelo.Personagem;
-//var atr = new Atributos(38,47,37,97,90,62,65,20);
-//var personagem = new Personagem(355349319047577610,"Sion",atr,20,8,14, 7,"https://img.ifunny.co/images/48f343f9a0af7eab5c718607f2404978aecdaa2e1c63c279fafcccbd2099511e_1.jpg");
+//var atr = new Atributos(91,60,94,93,57,86,77,86);
+//var personagem = new Personagem(528671433761488906,"Fletcher",atr,20,8,14, 7,"https://img.ifunny.co/images/48f343f9a0af7eab5c718607f2404978aecdaa2e1c63c279fafcccbd2099511e_1.jpg");
 //console.log(JSON.stringify(personagem.atributos) + "  DEU CERTO");
 
 const getRandomIntInclusive = (min, max) => {
@@ -66,7 +66,7 @@ mongodb.connect(url, async (error,banco) => {
  
   //await consulta.forEach(doc => console.log(doc));
   
- /* dbo.collection("Personagens").insertOne(personagem, (doc) =>{
+  /*dbo.collection("Personagens").insertOne(personagem, (doc) =>{
     console.log(doc);
   })*/
 
